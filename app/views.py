@@ -24,6 +24,9 @@ def login():
 		if user:
 			flash('User ' + str(user.nick) + ' has successfully logged in.')
 			return redirect('/profile/' + str(user.id))
+		else:
+			flash('User with login ' + str(form.nick.data) + ' does not exist.')
+			return redirect('/')
 	flash('Data has been input incorrectly.')
 	return render_template('login.html',
 							title = 'Log In',
