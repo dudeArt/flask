@@ -4,10 +4,10 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	nick = db.Column(db.String(64), index = True, unique = True)
 	password = db.Column(db.String(64), index = True, unique = True)
-	posts = db.relationship('Post', backref = 'author', lazy = 'dynamic')
+	posts = db.relationship('Post', backref = 'author', lazy = 'dynamic') #backref - imya svyazannogo polya
 
 	def __repr__(self):
-		return '<User %r>' %(self.nickname)
+		return '<User %r>' %(self.nick)
 
 class Post(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
