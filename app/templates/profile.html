@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if user %}
+	<center><h1><font color = "red">{{user.nick}}</font></h1><h3>{{user.name}}</center>
+	{% else %}
+	<center><h2><font color = "red">Error. User has not found.</font></h2></center>
+	{% endif %}
+{% endblock %}
